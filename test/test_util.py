@@ -205,7 +205,7 @@ class TestResult(object):
         else:
             classname = "{}.{}.{}".format(self.board_name, self.board, self.name)
         case = ElementTree.Element('testcase',
-                    name=self.name,
+                    name=classname,
                     classname=classname,
                     status=("passed" if self.passed else "failed"),
                     time="%.3f" % self.time
@@ -217,6 +217,7 @@ class TestResult(object):
                         message="failure",
                         type="failure"
                         )
+            failed.text = self.filter_output(self.output)
         system_out = ElementTree.SubElement(case, 'system-out')
         system_out.text = self.filter_output(self.output)
         return case
