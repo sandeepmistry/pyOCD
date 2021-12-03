@@ -118,6 +118,7 @@ from . import target_HC32L07x
 from . import target_MPS3_AN522
 from . import target_MPS3_AN540
 from . import target_RP2040
+from . import target_DA16200
 
 ## @brief Dictionary of all builtin targets.
 #
@@ -268,4 +269,5 @@ BUILTIN_TARGETS = {
           'rp2040' : target_RP2040.RP2040Core0,
           'rp2040_core0' : target_RP2040.RP2040Core0,
           'rp2040_core1' : target_RP2040.RP2040Core1,
+          'da16200_w25q32jw': target_DA16200.DA16200_W25Q32JW
          }
